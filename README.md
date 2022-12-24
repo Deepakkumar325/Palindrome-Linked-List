@@ -25,6 +25,7 @@ class Solution {
    public ListNode firstMiddle( ListNode head)
    {
        ListNode hare=head;
+       
        ListNode turtle=head;
        while(hare.next!=null && hare.next.next!=null){
            hare=hare.next.next;
@@ -36,12 +37,15 @@ class Solution {
     
     //Main 
     public boolean isPalindrome(ListNode head) {
+    
         if(head==null && head.next==null){
             return true;
         }
         ListNode  middle =firstMiddle(head);
+        
         ListNode secondfirst=reverse(middle.next);
         ListNode firststart=head;
+        
         while(secondfirst!=null){
             if(firststart.val!=secondfirst.val){
                 return false;
